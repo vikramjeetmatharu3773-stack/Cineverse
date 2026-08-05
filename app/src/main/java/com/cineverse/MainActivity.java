@@ -2,6 +2,7 @@ package com.cineverse.app;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ public class MainActivity extends Activity {
     private static final String TAG = "Cineverse";
     private ApiService apiService;
     private Button loadMoviesButton;
+    private Button playMovieButton;
     private TextView statusTextView;
 
     @Override
@@ -29,13 +31,15 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         loadMoviesButton = findViewById(R.id.load_movies_button);
+        playMovieButton = findViewById(R.id.play_movie_button);
         statusTextView = findViewById(R.id.status_text);
         
         // Initialize API service
         apiService = RetrofitClient.getClient().create(ApiService.class);
         
-        // Set up button click listener
+        // Set up button click listeners
         loadMoviesButton.setOnClickListener(v -> loadMovies());
+        playMovieButton.setOnClickListener(v -> playSampleMovie());
         
         // Check if we have a deep link
         Intent intent = getIntent();
@@ -82,6 +86,12 @@ public class MainActivity extends Activity {
                 loadMoviesButton.setEnabled(true);
             }
         });
+    }
+    
+    private void playSampleMovie() {
+        Intent playIntent = new Intent(this, MoviePlayerActivity.class);
+        playIntent.setData(Uri.parse("https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"));
+        startActivity(playIntent);
     }
     
     private void handleDeepLink(Uri data) {
