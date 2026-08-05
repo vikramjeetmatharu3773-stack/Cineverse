@@ -22,7 +22,7 @@ android {
         // Resource configurations
         resConfigs "en", "xxhdpi"
     }
-
+    
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -38,7 +38,7 @@ android {
             keyPassword 'android'
         }
     }
-
+    
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
@@ -46,7 +46,7 @@ android {
             debuggable true
             jniDebuggable true
             renderscriptDebuggable true
-            applicationIdSuffix ".debug"
+            // Removed applicationIdSuffix to prevent debug variant naming
             versionNameSuffix "-debug"
         }
         
