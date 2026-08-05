@@ -32,23 +32,30 @@ jobs:
       - name: Clean Gradle cache
         run: ./gradlew --stop
         
-      - name: Accept Android SDK licenses
+      - name: Install Android SDK
         run: |
-          # Set up Android SDK
-          export ANDROID_HOME=/usr/lib/android-sdk
-          mkdir -p $ANDROID_HOME/licenses
-          echo "d975f751698a77b662f1254ddbeed390" > $ANDROID_HOME/licenses/android-sdk-license
-          echo "84831b9409646a918e30573bab4c9c91346d8abd" > $ANDROID_HOME/licenses/android-sdk-license
-          echo "Accepted Android SDK licenses"
+          # Install Android command line tools
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux_latest.zip
+          unzip -q commandlinetools-linux_latest.zip
+          mkdir -p ~/android-sdk/cmdline-tools/latest
+          mv cmdline-tools/* ~/android-sdk/cmdline-tools/latest/
+          export PATH=$PATH:~/android-sdk/cmdline-tools/latest/bin
+          
+          # Accept SDK licenses
+          yes | sdkmanager --licenses
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
+          
+          # Set up environment
+          echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
+          echo "PATH=$PATH:$HOME/android-sdk/cmdline-tools/latest/bin:$HOME/android-sdk/platform-tools" >> $GITHUB_ENV
           
       - name: Build Debug APK
         run: |
           # Install required tools
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk android-tools-adb android-tools-fastboot zipalign apksigner aapt curl
+          sudo apt-get install -y openjdk-17-jdk zipalign apksigner aapt curl
           
           # Set up Android SDK
-          export ANDROID_HOME=/usr/lib/android-sdk
           echo "sdk.dir=$ANDROID_HOME" > local.properties
           
           # Clean and build with Gradle
@@ -69,7 +76,6 @@ jobs:
             mkdir -p build/res
             
             # Compile Java files
-            export ANDROID_HOME=/usr/lib/android-sdk
             javac -cp $ANDROID_HOME/platforms/android-34/android.jar src/main/java/com/cineverse/*.java -d build/classes
             
             # Check compilation success
