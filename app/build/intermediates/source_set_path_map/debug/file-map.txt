@@ -25,10 +25,10 @@ com.cineverse.app-jetified-viewpager2-1.0.0-23 /root/.gradle/caches/transforms-3
 com.cineverse.app-jetified-activity-1.8.0-24 /root/.gradle/caches/transforms-3/e8c708fde56e39b7ccebddc207d7e445/transformed/jetified-activity-1.8.0/res
 com.cineverse.app-lifecycle-runtime-2.6.1-25 /root/.gradle/caches/transforms-3/fc50db5668ff7bc8adf5ca296bc7f0b2/transformed/lifecycle-runtime-2.6.1/res
 com.cineverse.app-core-runtime-2.2.0-26 /root/.gradle/caches/transforms-3/ff1b369f9efaa17b93f6d25459ede875/transformed/core-runtime-2.2.0/res
-com.cineverse.app-pngs-27 /root/cineverse-app/app/build/generated/res/pngs/debug
-com.cineverse.app-resValues-28 /root/cineverse-app/app/build/generated/res/resValues/debug
-com.cineverse.app-packageDebugResources-29 /root/cineverse-app/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.cineverse.app-packageDebugResources-30 /root/cineverse-app/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.cineverse.app-merged_res-31 /root/cineverse-app/app/build/intermediates/merged_res/debug
-com.cineverse.app-debug-32 /root/cineverse-app/app/src/debug/res
-com.cineverse.app-main-33 /root/cineverse-app/app/src/main/res
+com.cineverse.app-pngs-27 /root/cineverse-repair/app/build/generated/res/pngs/debug
+com.cineverse.app-resValues-28 /root/cineverse-repair/app/build/generated/res/resValues/debug
+com.cineverse.app-packageDebugResources-29 /root/cineverse-repair/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.cineverse.app-packageDebugResources-30 /root/cineverse-repair/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.cineverse.app-merged_res-31 /root/cineverse-repair/app/build/intermediates/merged_res/debug
+com.cineverse.app-debug-32 /root/cineverse-repair/app/src/debug/res
+com.cineverse.app-main-33 /root/cineverse-repair/app/src/main/res

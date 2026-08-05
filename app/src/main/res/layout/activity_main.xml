@@ -3,31 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="#2D1B69">
+    android:padding="16dp"
+    android:gravity="center">
 
     <TextView
+        android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cineverse"
-        android:textSize="48sp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Movie Streaming App"
-        android:textSize="24sp"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="40dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🎬 🎭 🎥"
         android:textSize="32sp"
-        android:textColor="@android:color/white"/>
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cineverse\nMovie Streaming App\n\nAPI: http://10.0.2.2:3000\n\nClick 'Load Movies' to test connection"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/load_movies_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Movies"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/play_movie_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Sample Movie"
+        android:textSize="18sp"/>
 
 </LinearLayout>

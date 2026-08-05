@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">Cineverse</string>
+    <string name="title_activity_main">Cineverse</string>
+    
+    <!-- Button labels -->
+    <string name="load_movies_button">Load Movies</string>
+    <string name="play_movie_button">Play Sample Movie</string>
+    
+    <!-- Status messages -->
+    <string name="loading_movies">Loading movies...</string>
+    <string name="movies_loaded">Movies loaded successfully!</string>
+    <string name="network_error">Network error occurred</string>
+    <string name="api_error">API error occurred</string>
+    
+    <!-- Movie details -->
+    <string name="movie_title">Title</string>
+    <string name="movie_description">Description</string>
+    <string name="movie_year">Year</string>
+    <string name="movie_rating">Rating</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_movies">Movies</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Error messages -->
+    <string name="error_no_movies">No movies found</string>
+    <string name="error_network_connection">Check your internet connection</string>
+    <string name="error_api_server">API server not responding</string>
+    <string name="error_invalid_apk">Invalid APK file</string>
+    
+    <!-- Success messages -->
+    <string name="success_installation">App installed successfully!</string>
+    <string name="success_launch">App launched successfully!</string>
+    
+    <!-- Deep links -->
+    <string name="deep_link_movie">cineverse://movie/</string>
+    
+    <!-- Permissions -->
+    <string name="permission_internet">Internet access</string>
+    <string name="permission_storage">Storage access</string>
 </resources>

@@ -2063,37 +2063,22 @@
                     }
                 },
                 {
-                    "source": "/root/cineverse-app/app/src/main/res/values/strings.xml",
+                    "source": "/root/cineverse-repair/app/src/main/res/values/themes.xml",
                     "from": {
-                        "startLines": "1",
+                        "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "46",
-                        "endOffsets": "58"
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "203"
                     },
                     "to": {
-                        "startLines": "1885",
+                        "startLines": "2053",
                         "startColumns": "4",
-                        "startOffsets": "126560",
-                        "endColumns": "46",
-                        "endOffsets": "126602"
-                    }
-                },
-                {
-                    "source": "/root/cineverse-app/app/src/main/res/values/colors.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,107",
-                        "endColumns": "51,39",
-                        "endOffsets": "102,142"
-                    },
-                    "to": {
-                        "startLines": "864,877",
-                        "startColumns": "4,4",
-                        "startOffsets": "51831,52701",
-                        "endColumns": "51,39",
-                        "endOffsets": "51878,52736"
+                        "startOffsets": "148373",
+                        "endLines": "2055",
+                        "endColumns": "12",
+                        "endOffsets": "148521"
                     }
                 },
                 {
@@ -2111,6 +2096,23 @@
                         "startOffsets": "119504",
                         "endColumns": "42",
                         "endOffsets": "119542"
+                    }
+                },
+                {
+                    "source": "/root/cineverse-repair/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,107",
+                        "endColumns": "51,39",
+                        "endOffsets": "102,142"
+                    },
+                    "to": {
+                        "startLines": "864,877",
+                        "startColumns": "4,4",
+                        "startOffsets": "51831,52701",
+                        "endColumns": "51,39",
+                        "endOffsets": "51878,52736"
                     }
                 },
                 {
@@ -2221,25 +2223,6 @@
                         "startOffsets": "119661",
                         "endColumns": "49",
                         "endOffsets": "119706"
-                    }
-                },
-                {
-                    "source": "/root/cineverse-app/app/src/main/res/values/themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "203"
-                    },
-                    "to": {
-                        "startLines": "2053",
-                        "startColumns": "4",
-                        "startOffsets": "148373",
-                        "endLines": "2055",
-                        "endColumns": "12",
-                        "endOffsets": "148521"
                     }
                 },
                 {
@@ -2369,6 +2352,23 @@
                         "startOffsets": "116211,116251,117383,117607,117662,119158,119212,119264,119313,119374",
                         "endColumns": "39,46,42,54,46,53,51,48,60,49",
                         "endOffsets": "116246,116293,117421,117657,117704,119207,119259,119308,119369,119419"
+                    }
+                },
+                {
+                    "source": "/root/cineverse-repair/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "46",
+                        "endOffsets": "58"
+                    },
+                    "to": {
+                        "startLines": "1885",
+                        "startColumns": "4",
+                        "startOffsets": "126560",
+                        "endColumns": "46",
+                        "endOffsets": "126602"
                     }
                 },
                 {

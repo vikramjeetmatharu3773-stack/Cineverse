@@ -6,14 +6,14 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
-9        android:targetSdkVersion="35" />
+9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/root/cineverse-app/app/src/main/AndroidManifest.xml:4:5-67
-11-->/root/cineverse-app/app/src/main/AndroidManifest.xml:4:22-64
+11-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:4:5-67
+11-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:4:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/root/cineverse-app/app/src/main/AndroidManifest.xml:5:5-79
-12-->/root/cineverse-app/app/src/main/AndroidManifest.xml:5:22-76
+12-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:5:5-79
+12-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:5:22-76
 13
 14    <permission
 14-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/8222cb7143ba57e62d848e6565915cfd/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
@@ -27,34 +27,34 @@
 18-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/8222cb7143ba57e62d848e6565915cfd/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->/root/cineverse-app/app/src/main/AndroidManifest.xml:7:5-21:19
+20-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:7:5-21:19
 21        android:allowBackup="true"
-21-->/root/cineverse-app/app/src/main/AndroidManifest.xml:8:9-35
+21-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:8:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.9.0] /root/.gradle/caches/transforms-3/8222cb7143ba57e62d848e6565915cfd/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 23        android:debuggable="true"
 24        android:extractNativeLibs="false"
 25        android:icon="@drawable/ic_launcher"
-25-->/root/cineverse-app/app/src/main/AndroidManifest.xml:10:9-45
+25-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:10:9-45
 26        android:label="Cineverse"
-26-->/root/cineverse-app/app/src/main/AndroidManifest.xml:9:9-34
+26-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:9:9-34
 27        android:theme="@style/Theme.Cineverse" >
-27-->/root/cineverse-app/app/src/main/AndroidManifest.xml:11:9-47
+27-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:11:9-47
 28        <activity
-28-->/root/cineverse-app/app/src/main/AndroidManifest.xml:13:9-20:20
+28-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:13:9-20:20
 29            android:name="com.cineverse.app.MainActivity"
-29-->/root/cineverse-app/app/src/main/AndroidManifest.xml:14:13-41
+29-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:14:13-41
 30            android:exported="true" >
-30-->/root/cineverse-app/app/src/main/AndroidManifest.xml:15:13-36
+30-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:15:13-36
 31            <intent-filter>
-31-->/root/cineverse-app/app/src/main/AndroidManifest.xml:16:13-19:29
+31-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:16:13-19:29
 32                <action android:name="android.intent.action.MAIN" />
-32-->/root/cineverse-app/app/src/main/AndroidManifest.xml:17:17-69
-32-->/root/cineverse-app/app/src/main/AndroidManifest.xml:17:25-66
+32-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:17:17-69
+32-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:17:25-66
 33
 34                <category android:name="android.intent.category.LAUNCHER" />
-34-->/root/cineverse-app/app/src/main/AndroidManifest.xml:18:17-77
-34-->/root/cineverse-app/app/src/main/AndroidManifest.xml:18:27-74
+34-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:18:17-77
+34-->/root/cineverse-repair/app/src/main/AndroidManifest.xml:18:27-74
 35            </intent-filter>
 36        </activity>
 37
