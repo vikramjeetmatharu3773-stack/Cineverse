@@ -9,17 +9,87 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
+          
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+        
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: |
+          # Install required tools
+          sudo apt-get update
+          sudo apt-get install -y openjdk-17-jdk android-tools-adb android-tools-fastboot
+          
+          # Clean and build
+          ./gradlew clean
+          ./gradlew assembleDebug --no-daemon --quiet
+          
+          # Check if APK was built
+          if [ ! -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
+            echo "APK not found, trying manual build"
+            cd app
+            mkdir -p build/dex
+            mkdir -p build/classes
+            
+            # Compile Java files
+            export ANDROID_HOME=/usr/lib/android-sdk
+            javac -cp $ANDROID_HOME/platforms/android-34/android.jar src/main/java/com/cineverse/*.java -d build/classes
+            
+            # Create classes.dex
+            $ANDROID_HOME/build-tools/34.0.0/d8 --classpath $ANDROID_HOME/platforms/android-34/android.jar --output build/dex build/classes/com/cineverse/*.class
+            
+            # Create APK
+            aapt package -f -M src/main/AndroidManifest.xml -S src/main/res -I $ANDROID_HOME/platforms/android-34/android.jar -F build/app.apk
+            
+            # Add classes.dex to APK
+            aapt add build/app.apk build/dex/classes.dex
+            
+            # Sign APK
+            apksigner sign --ks debug.keystore --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android build/app.apk
+            
+            # Copy to final location
+            cp build/app.apk ../../app/build/outputs/apk/debug/app-debug.apk
+            cd ..
+          fi
+          
+      - name: Verify APK
+        run: |
+          # Install build tools
+          sudo apt-get install -y zipalign apksigner aapt
+          
+          # Check APK exists
+          if [ ! -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
+            echo "APK not found!"
+            exit 1
+          fi
+          
+          # Verify APK structure
+          aapt dump badging app/build/outputs/apk/debug/app-debug.apk
+          
+          # Zipalign the APK
+          zipalign -v 4 app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/app-debug-aligned.apk
+          
+          # Sign the APK
+          apksigner sign --ks app/debug.keystore --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android app/build/outputs/apk/debug/app-debug-aligned.apk
+          
+          # Verify APK signature
+          apksigner verify app/build/outputs/apk/debug/app-debug-aligned.apk
+          
+          # Rename to final APK
+          mv app/build/outputs/apk/debug/app-debug-aligned.apk Cineverse.apk
+          
+          # Verify final APK
+          file Cineverse.apk
+          ls -la Cineverse.apk
+          unzip -l Cineverse.apk | head -5
+          
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: cineverse-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: Cineverse.apk

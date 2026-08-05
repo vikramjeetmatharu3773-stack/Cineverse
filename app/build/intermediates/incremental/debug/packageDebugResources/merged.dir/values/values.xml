@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_background">#2D1B69</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Cineverse</string>
+    <style name="AppTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/purple_background</item>
+    </style>
+</resources>

@@ -4,17 +4,21 @@ plugins {
 
 android {
     namespace 'com.cineverse.app'
-    compileSdk 35
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.cineverse.app"
         minSdkVersion 24
-        targetSdkVersion 35
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
