@@ -32,22 +32,10 @@ jobs:
       - name: Clean Gradle cache
         run: ./gradlew --stop
         
-      - name: Install Android SDK
-        run: |
-          # Install Android command line tools
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux_latest.zip
-          unzip -q commandlinetools-linux_latest.zip
-          mkdir -p ~/android-sdk/cmdline-tools/latest
-          mv cmdline-tools/* ~/android-sdk/cmdline-tools/latest/
-          export PATH=$PATH:~/android-sdk/cmdline-tools/latest/bin
-          
-          # Accept SDK licenses
-          yes | sdkmanager --licenses
-          sdkmanager "platforms;android-34" "build-tools;34.0.0"
-          
-          # Set up environment
-          echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
-          echo "PATH=$PATH:$HOME/android-sdk/cmdline-tools/latest/bin:$HOME/android-sdk/platform-tools" >> $GITHUB_ENV
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          sdk-version: '34'
           
       - name: Build Debug APK
         run: |
