@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<data-extraction-rules>
-    <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> tags to control what data is backed up.
-             For more details, see https://developer.android.com/guide/topics/data/backup#xml_config -->
-    </cloud-backup>
-</data-extraction-rules>
