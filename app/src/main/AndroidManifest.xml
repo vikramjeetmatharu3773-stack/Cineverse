@@ -20,7 +20,6 @@
     <application
         android:allowBackup="true"
         android:allowClearUserData="true"
-        android:allowRestoreAnyVersion="true"
         android:icon="@drawable/ic_launcher"
         android:label="Cineverse"
         android:roundIcon="@drawable/ic_launcher"
