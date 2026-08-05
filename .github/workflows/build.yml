@@ -32,6 +32,15 @@ jobs:
       - name: Clean Gradle cache
         run: ./gradlew --stop
         
+      - name: Accept Android SDK licenses
+        run: |
+          # Set up Android SDK
+          export ANDROID_HOME=/usr/lib/android-sdk
+          mkdir -p $ANDROID_HOME/licenses
+          echo "d975f751698a77b662f1254ddbeed390" > $ANDROID_HOME/licenses/android-sdk-license
+          echo "84831b9409646a918e30573bab4c9c91346d8abd" > $ANDROID_HOME/licenses/android-sdk-license
+          echo "Accepted Android SDK licenses"
+          
       - name: Build Debug APK
         run: |
           # Install required tools
