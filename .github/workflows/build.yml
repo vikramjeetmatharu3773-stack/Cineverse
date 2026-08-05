@@ -37,12 +37,13 @@ jobs:
         with:
           sdk-version: '34'
           
-      - name: Build Debug APK
+      - name: Install Android tools
         run: |
-          # Install required tools
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jdk zipalign apksigner aapt curl
           
+      - name: Build Debug APK
+        run: |
           # Set up Android SDK
           echo "sdk.dir=$ANDROID_HOME" > local.properties
           
@@ -194,6 +195,11 @@ jobs:
           name: cineverse-debug-apk
           path: .
           
+      - name: Install Android tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aapt apksigner zipalign
+      
       - name: Final Validation
         run: |
           echo "=== FINAL VALIDATION ==="
